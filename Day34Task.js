@@ -5,7 +5,7 @@ var keyValue;
 var bar = document.getElementById("bar");
 var control = document.getElementById("control");
 var inputtext = document.getElementById("inputtext");
-var body = document.getElementsByTagName("body")[0];
+var body = document.body;
 bar.addEventListener('click',onBarClick,false);
 bar.addEventListener('touchstart',onBarTouch,false);
 body.addEventListener('mousedown',mouseOnDown,false);
