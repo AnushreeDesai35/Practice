@@ -37,3 +37,24 @@ if(j >= 560)
 requestAnimationFrame(bouncingBall);
 }
 requestAnimationFrame(bouncingBall);
+
+
+
+
+/*
+
+
+var i=0,j=0,a=0;
+function bouncingBall() {
+if(parseInt(j)<560)
+{
+	i++;
+	j = (i*i)/(4*10)
+	$(".ball").offset({left	:i,top:j});
+}
+requestAnimationFrame(bouncingBall);
+}
+requestAnimationFrame(bouncingBall);
+
+
+*/
