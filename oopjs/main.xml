@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<ui>
+	<panel rect="0,0,400,400" title="app1" uniquid="div1">
+		<button rect="0,0,20,20" uniquid="btn1">Play</button>
+		<button rect="25,25,30,30" uniquid="btn2">Pause</button>
+	</panel>
+</ui>

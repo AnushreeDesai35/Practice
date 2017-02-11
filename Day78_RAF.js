@@ -1,4 +1,3 @@
-
 var i=0,j=0,a=0;
 function bouncingBall() {
 if(parseInt(i)<150)
@@ -64,8 +63,6 @@ if(parseInt(i)>=500 && parseInt(i)<550)
 	console.log('i : '+i);
 	console.log('j : '+j);
 }
-
-
 requestAnimationFrame(bouncingBall);
 }
 requestAnimationFrame(bouncingBall);
