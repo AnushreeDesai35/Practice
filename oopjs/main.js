@@ -1,12 +1,13 @@
 var ajaxFileDownloader = ( function() {
 var resultData= "";
-  function XMLDownloader() {
+  function XMLDownloader(fileXML) {
     
     this.downloadXML = function(){
-			$.get('main.xml',function(result){
+			$.get(fileXML,function(result){
 			console.log(result);
 			resultData = result;
 			console.log(resultData);
+			return resultData;
 		});
 	};
 	this.xmlData = resultData;
@@ -15,12 +16,14 @@ var resultData= "";
   return XMLDownloader;
 } )();
 
-var xmlFile = new ajaxFileDownloader();
+var xmlFile = new ajaxFileDownloader('main.xml');	
 console.log(xmlFile);
-xmlFile.downloadXML();
-console.log(xmlFile);
-var xmlReturn = xmlFile.xmlData;
-console.log('hi'+xmlReturn);
+var xmlData = xmlFile.downloadXML();
+console.log(xmlData);
+// console.log(xmlFile);
+// var xmlReturn = xmlFile.xmlData;
+// console.log('hi'+xmlReturn);
+
 
 /*
 var ajaxFileDownloader = (function(){
