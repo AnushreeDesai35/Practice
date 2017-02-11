@@ -65,16 +65,16 @@ var uiCreator = ( function() {
 	function createSlider(elementObject,parentElement)
 	{
 		//var slider = new Slider();
-		var uiElement1 = document.createElement("div");
-		var uiElement2 = document.createElement("div");
-		uiElement1.setAttribute("id","bar");
-		uiElement2.setAttribute("id","control");
-		$("body").append(uiElement1);
-		$("#bar").append(uiElement2);
-		var coordinates = elementObject.attributes["rect"].value.split(",");
-		$("#bar").css({left: coordinates[0]+'px','top': coordinates[1]+'px',width: coordinates[2]+'px',height: coordinates[3],position:"absolute"});
-		var slider = new Slider(uiElement1,uiElement2);
-		var val = slider.createSlider();
+		// var uiElement1 = document.createElement("div");
+		// var uiElement2 = document.createElement("div");
+		// uiElement1.setAttribute("id","bar");
+		// uiElement2.setAttribute("id","control");
+		// $("body").append(uiElement1);
+		// $("#bar").append(uiElement2);
+		// var coordinates = elementObject.attributes["rect"].value.split(",");
+		// $("#bar").css({left: coordinates[0]+'px','top': coordinates[1]+'px',width: coordinates[2]+'px',height: coordinates[3],position:"absolute"});
+		 var slider = new Slider(elementObject);
+		var val = slider.createSlider(elementObject);
 	}
 	
 	function createUI()
