@@ -3,5 +3,6 @@
 	<panel rect="0,0,400,400" title="app1" uniquid="div1">
 		<button rect="0,0,50,50" uniquid="btn1">Play</button>
 		<button rect="60,0,50,50" uniquid="btn2">Pause</button>
+		<slider rect="0,60,115,15"></slider>
 	</panel>
 </ui>
