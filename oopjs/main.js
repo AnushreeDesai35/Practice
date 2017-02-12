@@ -16,7 +16,6 @@ var resultData= "";
   return XMLDownloader;
 })();
 
-
 var xmlReturn = new ajaxFileDownloader('main.xml');	
 var abc = new uiCreator();
 xmlReturn.downloadXML(abc.xmlui);

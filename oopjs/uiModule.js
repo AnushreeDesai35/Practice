@@ -18,6 +18,7 @@ var uiCreator = ( function() {
 	}
 	
 	function createElement(elementObject,parentElement){
+		var ele="";
 		imgSrc = "";
 		switch(elementObject.tagName){
 			case "button":
@@ -33,6 +34,7 @@ var uiCreator = ( function() {
 				createSlider(elementObject,parentElement);
 				break;
 			case "bouncingball":
+				createBouncingBall(elementObject,parentElement);
 				break;
 		}
 		
@@ -59,22 +61,20 @@ var uiCreator = ( function() {
 			else
 				$('#'+elementObject.parentElement.attributes["uniquid"].value).append(uiElement);
 			}
-
 	}
 
 	function createSlider(elementObject,parentElement)
 	{
-		//var slider = new Slider();
-		// var uiElement1 = document.createElement("div");
-		// var uiElement2 = document.createElement("div");
-		// uiElement1.setAttribute("id","bar");
-		// uiElement2.setAttribute("id","control");
-		// $("body").append(uiElement1);
-		// $("#bar").append(uiElement2);
-		// var coordinates = elementObject.attributes["rect"].value.split(",");
-		// $("#bar").css({left: coordinates[0]+'px','top': coordinates[1]+'px',width: coordinates[2]+'px',height: coordinates[3],position:"absolute"});
-		 var slider = new Slider(elementObject);
-		var val = slider.createSlider(elementObject);
+		var slider = new Slider(elementObject,parentElement);
+		var val = slider.createSlider();
+		//var leftval = parseInt(window.getComputedStyle(document.getElementById("control"),null).getPropertyValue("left"));
+		//console.log(leftval);
+	}
+	
+	function createBouncingBall(elementObject,parentElement)
+	{
+		var bouncingball = new BBall(elementObject,parentElement);
+		bouncingball.createBouncing();
 	}
 	
 	function createUI()

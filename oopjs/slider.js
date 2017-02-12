@@ -1,24 +1,26 @@
 var Slider = (function(){
-	function sliderCreator(elementObject) {
+	function sliderCreator(elementObject,parentElement) {
 		
 		var downMouse;
 		var uiElement1 = document.createElement("div");
 		var uiElement2 = document.createElement("div");
-		uiElement1.setAttribute("id","bar");
-		uiElement2.setAttribute("id","control");
+		uiElement1.setAttribute("id",elementObject.attributes["id1"].value);
+		uiElement2.setAttribute("id",elementObject.attributes["id2"].value);
+		uiElement1.setAttribute("class",elementObject.attributes["class1"].value);
+		uiElement2.setAttribute("class",elementObject.attributes["class2"].value);
 		var bar = uiElement1;
 		var control = uiElement2;
-		$("body").append(uiElement1);
-		$("#bar").append(uiElement2);
+		//$("body").append(uiElement1);
+		$('#'+elementObject.parentElement.attributes["uniquid"].value).append(uiElement1);
+		$("#"+elementObject.attributes["id1"].value).append(uiElement2);
 		var coordinates = elementObject.attributes["rect"].value.split(",");
-		$("#bar").css({left: coordinates[0]+'px','top': coordinates[1]+'px',width: coordinates[2]+'px',height: coordinates[3],position:"absolute"});
+		$("#"+elementObject.attributes["id1"].value).css({left: coordinates[0]+'px','top': coordinates[1]+'px',width: coordinates[2]+'px',height: coordinates[3],position:"absolute"});
 	this.createSlider = function()
 	{
 		document.addEventListener('mousedown',mouseOnDown,false);
 		document.addEventListener('mouseup',mouseOnUp,false);
 		document.addEventListener('mousemove',mouseOnMove,false);
 	};
-	this.controlValue = parseInt(control.style.left);
 	
 	function mouseOnDown(e)
 	{

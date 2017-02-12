@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <ui>
-	<panel rect="0,0,400,400" title="app1" uniquid="div1">
+	<panel rect="0,0,450,520" title="app1" uniquid="div1">
 		<button rect="0,0,50,50" uniquid="btn1">Play</button>
 		<button rect="60,0,50,50" uniquid="btn2">Pause</button>
-		<slider rect="0,60,115,15"></slider>
+		<slider rect="0,60,115,15" id1="bar1" id2="control1" class1="bar" class2="control"></slider>
+		<bouncingball rect="0,100,400,400" id1="ballDiv1" id2="ball1" class1="ballDiv" class2="ball"></bouncingball>
+	</panel>
+	<panel rect="500,0,450,520" title="app1" uniquid="div2">
+		<button rect="0,0,50,50" uniquid="btn3">Play</button>
+		<button rect="60,0,50,50" uniquid="btn4">Pause</button>
+		<slider rect="0,60,115,15" id1="bar2" id2="control2" class1="bar" class2="control"></slider>
+		<bouncingball rect="0,100,400,400" id1="ballDiv2" id2="ball2" class1="ballDiv" class2="ball"></bouncingball>
 	</panel>
 </ui>
