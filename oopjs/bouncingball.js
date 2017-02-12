@@ -16,6 +16,11 @@ var BBall = ( function() {
 	
 	this.createBouncing = function()
 	{
+		document.addEventListener("getLeft",getLeft,false);
+		
+		function getLeft(e){
+			console.log(e.detail.parLeft);
+		}
 		var i=0,j=0,a=0;
 		function bouncingBallAni() {
 			//alert('start bouncing');
@@ -45,7 +50,8 @@ var BBall = ( function() {
 			i++;
 			a--;
 			j = (a*a)/(4*7);
-			$(uiElement2).offset({left:i,top:j});
+			$(uiElement2
+			).offset({left:i,top:j});
 		}
 
 		requestAnimationFrame(bouncingBallAni);

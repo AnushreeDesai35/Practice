@@ -66,7 +66,7 @@ var uiCreator = ( function() {
 	function createSlider(elementObject,parentElement)
 	{
 		var slider = new Slider(elementObject,parentElement);
-		var val = slider.createSlider();
+		slider.createSlider();
 		//var leftval = parseInt(window.getComputedStyle(document.getElementById("control"),null).getPropertyValue("left"));
 		//console.log(leftval);
 	}

@@ -24,7 +24,7 @@ var Slider = (function(){
 	
 	function mouseOnDown(e)
 	{
-		if (e.target.id === "control")
+		if (e.target.id === elementObject.attributes["id2"].value)
 		downMouse = true;
 	}
 
@@ -45,7 +45,14 @@ var Slider = (function(){
 					if (controlx > 0)
 					control.style.left = (controlx - 1) + 'px';
 				}
-			//console.log(parseInt(control.style.left));
+				
+				var eventControl = new CustomEvent("getLeft",{
+					detail:{parLeft:parseInt(control.style.left)},
+					bubbles: true,
+					cancelable: true			
+				});
+				ev.target.dispatchEvent(eventControl);
+			console.log(parseInt(control.style.left));
 			}
 			
 	}
