@@ -78,7 +78,6 @@ var uiCreator = ( function() {
 	
 	function createBouncingBall(elementObject,parentElement)
 	{
-		console.log("skjhfbkj + "+speed);
 		var bouncingball = new BBall(elementObject,parentElement,speed);
 		bouncingball.createBouncing();
 	}

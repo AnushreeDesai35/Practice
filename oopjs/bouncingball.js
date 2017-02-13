@@ -13,7 +13,7 @@ var BBall = ( function() {
 	$("#"+elementObject.attributes["id1"].value).append(uiElement2);
 	var coordinates = elementObject.attributes["rect"].value.split(",");
 	$("#"+elementObject.attributes["id1"].value).css({left: coordinates[0]+'px','top': coordinates[1]+'px',width: coordinates[2]+'px',height: coordinates[3],position:"absolute"});
-	console.log("bouncingspeed : "+speed);
+	console.log("bouncingspeed : "+speed);x
 	this.createBouncing = function()
 	{
 		
