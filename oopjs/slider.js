@@ -1,6 +1,6 @@
 var Slider = (function(){
 	function sliderCreator(elementObject,parentElement) {
-		
+		var self = this;
 		var downMouse;
 		var uiElement1 = document.createElement("div");
 		var uiElement2 = document.createElement("div");
@@ -8,7 +8,7 @@ var Slider = (function(){
 		uiElement2.setAttribute("id",elementObject.attributes["id2"].value);
 		uiElement1.setAttribute("class",elementObject.attributes["class1"].value);
 		uiElement2.setAttribute("class",elementObject.attributes["class2"].value);
-		var bar = uiElement1;
+		this.bar = uiElement1;
 		var control = uiElement2;
 		//$("body").append(uiElement1);
 		$('#'+elementObject.parentElement.attributes["uniquid"].value).append(uiElement1);
@@ -51,10 +51,8 @@ var Slider = (function(){
 					bubbles: true,
 					cancelable: true			
 				});
-				ev.target.dispatchEvent(eventControl);
-			console.log(parseInt(control.style.left));
-			}
-			
+				self.bar.dispatchEvent(eventControl);
+			}		
 	}
 
 	function mouseOnUp(e)

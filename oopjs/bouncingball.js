@@ -1,6 +1,6 @@
 var BBall = ( function() {
 	
-  function bouncingBall(elementObject,parentElement) 
+  function bouncingBall(elementObject,parentElement,speed) 
   {
     var uiElement1 = document.createElement("div");
 	var uiElement2 = document.createElement("div");
@@ -13,14 +13,10 @@ var BBall = ( function() {
 	$("#"+elementObject.attributes["id1"].value).append(uiElement2);
 	var coordinates = elementObject.attributes["rect"].value.split(",");
 	$("#"+elementObject.attributes["id1"].value).css({left: coordinates[0]+'px','top': coordinates[1]+'px',width: coordinates[2]+'px',height: coordinates[3],position:"absolute"});
-	
+	console.log("bouncingspeed : "+speed);
 	this.createBouncing = function()
 	{
-		document.addEventListener("getLeft",getLeft,false);
 		
-		function getLeft(e){
-			console.log(e.detail.parLeft);
-		}
 		var i=0,j=0,a=0;
 		function bouncingBallAni() {
 			//alert('start bouncing');

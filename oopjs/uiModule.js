@@ -1,5 +1,5 @@
 var uiCreator = ( function() {
-	
+	var speed;
 	function drawDiv(elementObject,parentElement){
 		createElement(elementObject,parentElement);
 		var j = 0;
@@ -67,13 +67,19 @@ var uiCreator = ( function() {
 	{
 		var slider = new Slider(elementObject,parentElement);
 		slider.createSlider();
-		//var leftval = parseInt(window.getComputedStyle(document.getElementById("control"),null).getPropertyValue("left"));
-		//console.log(leftval);
+		slider.bar.addEventListener("getLeft",getLeft,false);
+		
+		function getLeft(e)
+		{
+			speed = e.detail.parLeft;
+			console.log("first : "+speed);
+		}
 	}
 	
 	function createBouncingBall(elementObject,parentElement)
 	{
-		var bouncingball = new BBall(elementObject,parentElement);
+		console.log("skjhfbkj + "+speed);
+		var bouncingball = new BBall(elementObject,parentElement,speed);
 		bouncingball.createBouncing();
 	}
 	
