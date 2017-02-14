@@ -1,5 +1,5 @@
 var uiCreator = ( function() {
-	var speed;
+	
 	function drawDiv(elementObject,parentElement){
 		createElement(elementObject,parentElement);
 		var j = 0;
@@ -71,19 +71,21 @@ var uiCreator = ( function() {
 		
 		function getLeft(e)
 		{
-			speed = e.detail.parLeft;
-			console.log("first : "+speed);
+			self.speed = e.detail.parLeft;
+			console.log("first : "+self.speed);
 		}
 	}
 	
 	function createBouncingBall(elementObject,parentElement)
 	{
-		var bouncingball = new BBall(elementObject,parentElement,speed);
-		bouncingball.createBouncing();
+		var bouncingball = new BBall(elementObject,parentElement);
+		console.log('skjhbfkejf : '+self.speed);
+		bouncingball.createBouncing(self.speed);
 	}
 	
 	function createUI()
 	{
+		var self = this;
 		this.xmlui = function(xmlElements)
 		{
 			console.log(xmlElements);
@@ -99,6 +101,8 @@ var uiCreator = ( function() {
 			}
 		}
 		};
+		
+		this.speed = 0;
 	}
   return createUI;
 })();
