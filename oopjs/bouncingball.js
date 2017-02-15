@@ -2,6 +2,8 @@ var BBall = ( function() {
 	
   function bouncingBall(elementObject,parentElement) 
   {
+	  var i=0,j=0,a=0;
+	this.speed = 1;
     var uiElement1 = document.createElement("div");
 	var uiElement2 = document.createElement("div");
 	uiElement1.setAttribute("id",elementObject.attributes["id1"].value);
@@ -13,47 +15,47 @@ var BBall = ( function() {
 	$("#"+elementObject.attributes["id1"].value).append(uiElement2);
 	var coordinates = elementObject.attributes["rect"].value.split(",");
 	$("#"+elementObject.attributes["id1"].value).css({left: coordinates[0]+'px','top': coordinates[1]+'px',width: coordinates[2]+'px',height: coordinates[3],position:"absolute"});
-	//console.log("bouncingspeed : "+speed);
-	this.createBouncing = function(speed)
+	this.setSpeed = function(speed){
+		this.speed = speed;
+		console.log("bouncingspeed : "+this.speed);
+	}
+	
+	this.bouncingBallAni = function()
 	{
-		console.log("bouncingspeed : "+speed);
-		var i=0,j=0,a=0;
-		function bouncingBallAni() {
 			//alert('start bouncing');
 		if(parseInt(i)<100)
 		{
-			i++;
+			i= i+ this.speed;
 			j = (i*i)/(4*7);
 			$(uiElement2).offset({left:i,top:j});
 			a = i;
 		}
 		if(parseInt(i)>=100 && parseInt(i)<200)
 		{
-			i++;
+			i= i+ this.speed;
 			a--;
 			j = (a*a)/(4*7);
 			$(uiElement2).offset({left:i,top:j});
 		}
 		if(parseInt(i)>=200 && parseInt(i)<300)
 		{
-			i++;
+			i= i+ this.speed;
 			a++;
 			j = (a*a)/(4*7);
 			$(uiElement2).offset({left:i,top:j});
 		}
 		if(parseInt(i)>=300 && parseInt(i)<=350)
 		{
-			i++;
+			i= i+ this.speed;
 			a--;
 			j = (a*a)/(4*7);
-			$(uiElement2
-			).offset({left:i,top:j});
+			$(uiElement2).offset({left:i,top:j});
 		}
 
-		requestAnimationFrame(bouncingBallAni);
-		}
-		requestAnimationFrame(bouncingBallAni);
-	};
+		requestAnimationFrame(this.bouncingBallAni);
+	}
+		requestAnimationFrame(this.bouncingBallAni);
+	
   }
   return bouncingBall;
 })();
