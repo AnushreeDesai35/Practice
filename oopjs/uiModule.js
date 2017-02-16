@@ -83,6 +83,8 @@ var uiCreator = ( function() {
 	{
 		bouncingball = new BBall(elementObject,parentElement);
 		bouncingball.bouncingBallAni();
+		//var bindBouncing = bouncingball.bouncingBallAni.bind(bouncingball);
+		//bindBouncing();		
 	}
 	
 	function createUI()
