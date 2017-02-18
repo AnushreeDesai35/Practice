@@ -2,7 +2,25 @@ var BBall = ( function() {
 	
   function bouncingBall(elementObject,parentElement) 
   {
-	  var i=0,j=0,a=0;
+	var abc;
+	var animation;
+	var self = this;
+	var startBtn = document.getElementById(elementObject.attributes["startBtn"].value);
+	var stopBtn = document.getElementById(elementObject.attributes["stopBtn"].value);
+	startBtn.addEventListener("click",startAnimation);
+	stopBtn.addEventListener("click",stopAnimation);
+	  
+	  function startAnimation(){
+		abc = self.bouncingBallAni.bind(self);
+		console.log('abc : '+abc);
+		animation = requestAnimationFrame(abc);
+	  }
+	  
+	  function stopAnimation(){
+		cancelAnimationFrame(animation);
+	  }
+	  
+	var i=0,j=0,a=0;
 	this.speed = 1;
     var uiElement1 = document.createElement("div");
 	var uiElement2 = document.createElement("div");
@@ -15,6 +33,8 @@ var BBall = ( function() {
 	$("#"+elementObject.attributes["id1"].value).append(uiElement2);
 	var coordinates = elementObject.attributes["rect"].value.split(",");
 	$("#"+elementObject.attributes["id1"].value).css({left: coordinates[0]+'px','top': coordinates[1]+'px',width: coordinates[2]+'px',height: coordinates[3],position:"absolute"});
+	
+	
 	this.setSpeed = function(speed){
 		this.speed = speed;
 		console.log("bouncingspeed : "+this.speed);
@@ -52,9 +72,9 @@ var BBall = ( function() {
 			$(uiElement2).offset({left:i,top:j});
 		}
 
-		requestAnimationFrame(this.bouncingBallAni);
+		animation = requestAnimationFrame(abc);
 	}
-		requestAnimationFrame(this.bouncingBallAni);
+	
 	
   }
   return bouncingBall;

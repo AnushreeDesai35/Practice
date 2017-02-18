@@ -3,13 +3,13 @@
 	<panel rect="0,0,450,520" title="app1" uniquid="div1">
 		<button rect="0,0,50,50" uniquid="btn1">Play</button>
 		<button rect="60,0,50,50" uniquid="btn2">Pause</button>
-		<bouncingball rect="0,100,400,400" id1="ballDiv1" id2="ball1" class1="ballDiv" class2="ball"></bouncingball>
+		<bouncingball rect="0,100,400,400" id1="ballDiv1" id2="ball1" class1="ballDiv" class2="ball" startBtn="btn1" stopBtn="btn2"></bouncingball>
 		<slider rect="0,60,115,15" id1="bar1" id2="control1" class1="bar" class2="control"></slider>
 	</panel>
-	<!--<panel rect="500,0,450,520" title="app1" uniquid="div2">
+	<panel rect="500,0,450,520" title="app1" uniquid="div2">
 		<button rect="0,0,50,50" uniquid="btn3">Play</button>
 		<button rect="60,0,50,50" uniquid="btn4">Pause</button>
-		<bouncingball rect="0,100,400,400" id1="ballDiv2" id2="ball2" class1="ballDiv" class2="ball"></bouncingball>
+		<bouncingball rect="0,100,400,400" id1="ballDiv2" id2="ball2" class1="ballDiv" class2="ball" startBtn="btn3" stopBtn="btn4"></bouncingball>
 		<slider rect="0,60,115,15" id1="bar2" id2="control2" class1="bar" class2="control"></slider>
-	</panel>-->
+	</panel>
 </ui>

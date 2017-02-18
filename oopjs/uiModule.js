@@ -82,9 +82,6 @@ var uiCreator = ( function() {
 	function createBouncingBall(elementObject,parentElement)
 	{
 		bouncingball = new BBall(elementObject,parentElement);
-		bouncingball.bouncingBallAni();
-		//var bindBouncing = bouncingball.bouncingBallAni.bind(bouncingball);
-		//bindBouncing();		
 	}
 	
 	function createUI()
@@ -103,7 +100,7 @@ var uiCreator = ( function() {
 				createElement(xmlElements[i],"");
 			}
 		}
-		};
+	};
 
 	}
   return createUI;
