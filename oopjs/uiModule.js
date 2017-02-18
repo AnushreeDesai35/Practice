@@ -1,4 +1,6 @@
-var uiCreator = ( function() {
+var myapp = myapp || {};
+
+myapp.uiCreator = ( function() {
 	var ballSpeed;
 	var bouncingball;
 	function drawDiv(elementObject,parentElement){
@@ -66,7 +68,7 @@ var uiCreator = ( function() {
 
 	function createSlider(elementObject,parentElement)
 	{
-		var slider = new Slider(elementObject,parentElement);
+		var slider = new myapp.Slider(elementObject,parentElement);
 		slider.createSlider();
 		slider.bar.addEventListener("getLeft",getLeft,false);
 		
@@ -81,7 +83,7 @@ var uiCreator = ( function() {
 	
 	function createBouncingBall(elementObject,parentElement)
 	{
-		bouncingball = new BBall(elementObject,parentElement);
+		bouncingball = new myapp.BBall(elementObject,parentElement);
 	}
 	
 	function createUI()

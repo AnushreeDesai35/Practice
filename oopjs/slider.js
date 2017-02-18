@@ -1,4 +1,6 @@
-var Slider = (function(){
+var myapp = myapp || {};
+
+myapp.Slider = (function(){
 	function sliderCreator(elementObject,parentElement) {
 		var self = this;
 		var downMouse;

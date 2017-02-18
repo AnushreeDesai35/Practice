@@ -1,4 +1,6 @@
-var BBall = ( function() {
+var myapp = myapp || {};
+
+myapp.BBall = ( function() {
 	
   function bouncingBall(elementObject,parentElement) 
   {
@@ -7,13 +9,15 @@ var BBall = ( function() {
 	var self = this;
 	var startBtn = document.getElementById(elementObject.attributes["startBtn"].value);
 	var stopBtn = document.getElementById(elementObject.attributes["stopBtn"].value);
+	startAnimation = startAnimation.bind(this);
 	startBtn.addEventListener("click",startAnimation);
 	stopBtn.addEventListener("click",stopAnimation);
-	  
+	
 	  function startAnimation(){
-		abc = self.bouncingBallAni.bind(self);
-		console.log('abc : '+abc);
-		animation = requestAnimationFrame(abc);
+		//abc = self.bouncingBallAni.bind(self);
+		
+		//console.log('abc : '+abc);
+		animation = requestAnimationFrame(this.bouncingBallAni);
 	  }
 	  
 	  function stopAnimation(){
@@ -72,9 +76,10 @@ var BBall = ( function() {
 			$(uiElement2).offset({left:i,top:j});
 		}
 
-		animation = requestAnimationFrame(abc);
+		animation = requestAnimationFrame(this.bouncingBallAni);
 	}
 	
+	this.bouncingBallAni = this.bouncingBallAni.bind(this);
 	
   }
   return bouncingBall;

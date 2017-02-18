@@ -1,0 +1,9 @@
+function person()
+{
+	// variable intialization
+	// templating (e e pachi kese)
+	// dom caching(fetching dom elements) and dom creation(in case of dom element creation)
+	// event listeners and context binding (make sure binding is done after the function is created (period))
+	// update (for eg: updating variables or calculate logic)
+	// render (for eg: dom updates)
+}

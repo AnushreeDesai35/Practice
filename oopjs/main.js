@@ -1,5 +1,8 @@
 // XML downloader module
-var ajaxFileDownloader = ( function() {
+
+var myapp = myapp || {};
+
+myapp.ajaxFileDownloader = ( function() {
 var resultData= "";
   function XMLDownloader(fileXML) {
     
@@ -16,8 +19,8 @@ var resultData= "";
   return XMLDownloader;
 })();
 
-var xmlReturn = new ajaxFileDownloader('main.xml');	
-var abc = new uiCreator();
+var xmlReturn = new myapp.ajaxFileDownloader('main.xml');	
+var abc = new myapp.uiCreator();
 xmlReturn.downloadXML(abc.xmlui);
 
 
