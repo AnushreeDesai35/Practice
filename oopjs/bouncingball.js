@@ -51,7 +51,7 @@ myapp.BBall = ( function() {
 		{
 			i= i+ this.speed;
 			j = (i*i)/(4*7);
-			$(uiElement2).offset({left:i,top:j});
+			$(uiElement2).css({left:i,top:j});
 			a = i;
 		}
 		if(parseInt(i)>=100 && parseInt(i)<200)
@@ -59,21 +59,21 @@ myapp.BBall = ( function() {
 			i= i+ this.speed;
 			a--;
 			j = (a*a)/(4*7);
-			$(uiElement2).offset({left:i,top:j});
+			$(uiElement2).css({left:i,top:j});
 		}
 		if(parseInt(i)>=200 && parseInt(i)<300)
 		{
 			i= i+ this.speed;
 			a++;
 			j = (a*a)/(4*7);
-			$(uiElement2).offset({left:i,top:j});
+			$(uiElement2).css({left:i,top:j});
 		}
 		if(parseInt(i)>=300 && parseInt(i)<=350)
 		{
 			i= i+ this.speed;
 			a--;
 			j = (a*a)/(4*7);
-			$(uiElement2).offset({left:i,top:j});
+			$(uiElement2).css({left:i,top:j});
 		}
 
 		animation = requestAnimationFrame(this.bouncingBallAni);
