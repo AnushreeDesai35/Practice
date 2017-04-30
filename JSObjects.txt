@@ -1,0 +1,20 @@
+function Person(first, last, age, gender, interests) {
+  this.name = {
+    first,
+    last
+  };
+  this.age = age;
+  this.gender = gender;
+  this.interests = interests;
+};
+undefined
+p1 = new Person('a','b',24,'f','sadsd')
+Person {name: Object, age: 24, gender: "f", interests: "sadsd"}
+p1
+Person {name: Object, age: 24, gender: "f", interests: "sadsd"}
+p2 = new Person()
+Person {name: Object, age: undefined, gender: undefined, interests: undefined}
+Person.call(p2,'x','y',24,'m','sdfsd')
+undefined
+p2
+Person {name: Object, age: 24, gender: "m", interests: "sdfsd"}
