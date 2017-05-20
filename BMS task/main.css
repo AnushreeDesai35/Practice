@@ -1,0 +1,13 @@
+#testDiv{
+	height:50px;
+	width:50px;
+	background-color:blue;
+	left:0px;
+	top:0px;
+	position:absolute;
+}
+#animateDiv{
+	margin:300px 647px;
+	height:30px;
+	width:65px;
+}
